@@ -141,7 +141,7 @@ wget https://github.com/containerd/containerd/releases/download/v1.6.32/cri-cont
 tar -zxvf cri-containerd-cni-1.6.32-linux-amd64.tar.gz -C /
 
 # 配置服务文件（containerd.service）
-
+sudo wget -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/refs/heads/main/containerd.service
 
 # 手动创建配置目录
 mkdir -p /etc/containerd
