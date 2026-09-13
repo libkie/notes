@@ -125,6 +125,10 @@ Kubernetes、containerd 与 pause 镜像版本对照表
 | 1.28.x        | 1.7.x / 1.6.x       | pause:3.9     | 默认沙箱镜像升级至 3.9（官方公告）。            |
 | 1.29.x-1.30.x | 2.0.x / 1.7.x       | pause:3.10    | containerd 2.0 开始支持新功能（如镜像加 密）。 |
 
+- Kubernetes 1.23 默认容器 docker（docker-shim） 
+- Kubernetes 1.24 及以上默认容器 containerd（不支持 1.6以下版本），可通过 cri-docker 来使用docker容器
+- Kubernetes 1.36 不支持 containerd 1.x，支持 2.x
+
 [常用软件兼容版本参考](https://blog.csdn.net/oSmileAngel/article/details/143252624)
 
 ### 2.1 安装容器运行时（CRI）
