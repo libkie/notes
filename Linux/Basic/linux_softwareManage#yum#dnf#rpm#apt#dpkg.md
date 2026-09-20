@@ -3,7 +3,10 @@
 </br>
 </br>
 
-## RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
+
+## yum/dnf
+
+RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 1. **YUM** 全称：**Yellowdog Updater, Modified** 中文：修改版 Yellowdog 更新器
 
@@ -16,9 +19,6 @@
 3. **RPM** 全称：**RPM Package Manager**（原先叫 RedHat Package Manager） 中文：RPM 软件包管理器
 
 > 底层工具，yum/dnf 只是它的前端，直接操作 rpm 包。
-
-
-## yum/dnf
 
 | 操作   | 命令                                                          |
 | ---- | ----------------------------------------------------------- |
