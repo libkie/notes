@@ -3,14 +3,12 @@
 </br>
 </br>
 
-## 一、RPM 系
+## 一、RedHat 系
 
 RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 1. **YUM**，**Yellowdog Updater, Modified** ：修改版 Yellowdog 更新器（CentOS7/RHEL7 默认）。YellowDog 是早年一个 Linux 发行版，YUM 基于它的更新工具二次修改。
-
 2. **DNF**，**Dandified YUM** ：华丽版 / 升级版 YUM（RHEL8+/CentOS8+/Fedora 默认；`yum`命令只是 dnf 的软链接）
-
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
 ### RPM 包管理
@@ -49,13 +47,13 @@ tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
 </br>
 
-## 二、DEB 系
+## 二、Debian 系
 
 DEB 系（Debian、Ubuntu，`.deb`包）
 
 1. **APT**，**Advanced Package Tool** ：高级包工具。底层依赖`dpkg`，apt /apt-get/apt-cache 都属于 APT 工具集
-
-2. **dpkg**，**Debian Package**。apt 的底层工具
+2. `apt` 是新版推荐命令；`apt-get` / `apt-cache` 是旧版工具，脚本里还大量在用。
+3. **dpkg**，**Debian Package**。apt 的底层工具
 
 ### DEB 包管理
 
@@ -81,7 +79,6 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 包详情  | apt/apt-cache show <package_name>                                               | dpkg -s <deb_name>                               |
 | 包内容  |                                                                                 | dpkg -L <deb_name>                               |
 
-
 ### DEB 版本锁
 
 | 版本锁  | 命令                             |
@@ -92,22 +89,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 </br>
 
-## 三、dpkg/rpm
-
-| 操作  | dpkg | rpm                |
-| --- | ---- | ------------------ |
-| 安装  |      |                    |
-| 升级  |      |                    |
-| 卸载  |      |                    |
-| 清除  |      |                    |
-| 查找  |      |                    |
-| 包信息 |      | rpm -qi <rpm_name> |
-|     |      |                    |
-| 查包名 |      |                    |
-
-</br>
-
-## 源码编译安装
+## 三、源码编译安装
 
 > 以 nginx 安装为例：
 
