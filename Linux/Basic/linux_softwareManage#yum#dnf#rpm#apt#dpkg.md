@@ -69,7 +69,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ### DEB 包信息
 
-| 操作   | apt/apt-get命令                                                                   | dpkg命令                                           |
+| 操作   | apt/apt-cache命令                                                                 | dpkg命令                                           |
 | ---- | ------------------------------------------------------------------------------- | ------------------------------------------------ |
 | 搜索包  | apt/apt-cache search <package_key> --names-only                                 | dpkg -S <deb_name>                               |
 | 已安装  | apt list [<package_name>] -i/--installed                                        | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
