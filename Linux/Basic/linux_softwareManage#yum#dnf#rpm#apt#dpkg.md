@@ -20,20 +20,20 @@
 
 ## yum/dnf
 
-| 操作 | 命令 |
-| ---- | ---- |
-| 更新源 | sudo yum clean all && sudo yum makecache |
-| 安装包 | sudo yum install <package_name>[-<version\>] |
-| 升级包 | sudo yum upgrade <package_name> </br> 升级所有： sudo yum update |
-| 卸载包 | sudo yum remove <package_name> |
-| 降级包 | sudo yum downgrade <package_name>-<version\> |
-| 查找包 | yum search <package_name> |
-| 已安装 | yum list installed [<package_name>] |
-| 可用版本 | yum list <package_name> --showduplicates |
-| 锁定版本 | sudo yum versionlock add <package_name>[-version] |
-| 解锁锁定 | sudo yum versionlock delete <package_name> |
-| 清空锁定 | sudo yum versionlock clear |
-| 查看锁定 | yum versionlock list |
+| 操作   | 命令                                                          |
+| ---- | ----------------------------------------------------------- |
+| 更新源  | sudo yum clean all && sudo yum makecache                    |
+| 安装包  | sudo yum install <package_name>[-<version\>]                |
+| 升级包  | sudo yum upgrade <package_name> </br> 升级所有： sudo yum update |
+| 卸载包  | sudo yum remove <package_name>                              |
+| 降级包  | sudo yum downgrade <package_name>-<version\>                |
+| 查找包  | yum search <package_name>                                   |
+| 已安装  | yum list installed [<package_name>]                         |
+| 可用版本 | yum list <package_name> --showduplicates                    |
+| 锁定版本 | sudo yum versionlock add <package_name>[-version]           |
+| 解锁锁定 | sudo yum versionlock delete <package_name>                  |
+| 清空锁定 | sudo yum versionlock clear                                  |
+| 查看锁定 | yum versionlock list                                        |
 
 tip: 锁定版本需要自己安装 sudo yum install yum-plugin-versionlock
 
@@ -53,24 +53,24 @@ tip: 锁定版本需要自己安装 sudo yum install yum-plugin-versionlock
 
 
 
-| 操作 | 命令 |
-| ---- | ---- |
-| 编辑源 | sudo apt edit-sources [<source_name>] |
-| 更新源 | sudo apt/apt-get update |
-| 安装包 | sudo apt/apt-get install <package_name>[=<version\>] |
-| 升级包 | sudo apt/apt-get upgrade <package_name> |
-| 卸载包 | sudo apt/apt-get remove <package_name> |
-| 清除包 | sudo apt/apt-get purge <package_name> |
-| 已安装 | apt list [<package_name>] -i/--installed |
-| 查找包 | apt/apt-cache search <package_name> --names-only |
-| 安装细节 | apt/apt-cache show <package_name> |
-| 修复依赖 | sudo apt-get -f install |
-| 卸载依赖 | sudo apt-get autoremove |
-| 历史版本 | apt-cache policy <package_name> |
+| 操作   | 命令                                                                               |
+| ---- | -------------------------------------------------------------------------------- |
+| 编辑源  | sudo apt edit-sources [<source_name>]                                            |
+| 更新源  | sudo apt/apt-get update                                                          |
+| 安装包  | sudo apt/apt-get install <package_name>[=<version\>]                             |
+| 升级包  | sudo apt/apt-get upgrade <package_name>                                          |
+| 卸载包  | sudo apt/apt-get remove <package_name>                                           |
+| 清除包  | sudo apt/apt-get purge <package_name>                                            |
+| 已安装  | apt list [<package_name>] -i/--installed                                         |
+| 查找包  | apt/apt-cache search <package_name> --names-only                                 |
+| 安装细节 | apt/apt-cache show <package_name>                                                |
+| 修复依赖 | sudo apt-get -f install                                                          |
+| 卸载依赖 | sudo apt-get autoremove                                                          |
+| 历史版本 | apt-cache policy <package_name>                                                  |
 | 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |
-| 锁定版本 | sudo apt-mark hold <package_name> |
-| 解锁锁定 | sudo apt-mark unhold <package_name> |
-| 查看锁定 | apt-mark showhold |
+| 锁定版本 | sudo apt-mark hold <package_name>                                                |
+| 解锁锁定 | sudo apt-mark unhold <package_name>                                              |
+| 查看锁定 | apt-mark showhold                                                                |
 
 </br>
 
