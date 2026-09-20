@@ -14,24 +14,38 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
+包管理
+
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
 | 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
 | 搜索包  | yum/dnf search <package_key>                               |                              |
 | 已安装  | yum/dnf list installed [<package_name>]                    | rpm -qa [<rpm_name>]         |
 | 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
+| 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
+| 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
 | 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
 | 仅下载  | yum/dnf install <package_name> --downloadonly              |                              |
 | 本地安装 | yum/dnf localinstall <rpm_name>                            | rpm -ivh <rpm_name>          |
 | 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
-| 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
-| 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
-| 锁定版本 | yum/dnf versionlock add <package_name>[-version]           |                              |
-| 锁定解锁 | yum/dnf versionlock delete <package_name>                  |                              |
-| 锁定清空 | yum/dnf versionlock clear                                  |                              |
-| 锁定查看 | yum/dnf versionlock list                                   |                              |
+
+包查找
+
+|     |     |
+| --- | --- |
+|     |     |
+
+
+其他
+
+| 版本锁  | 命令                                               |
+| ---- | ------------------------------------------------ |
+| 锁定版本 | yum/dnf versionlock add <package_name>[-version] |
+| 锁定解锁 | yum/dnf versionlock delete <package_name>        |
+| 锁定清空 | yum/dnf versionlock clear                        |
+| 锁定查看 | yum/dnf versionlock list                         |
 
 tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
