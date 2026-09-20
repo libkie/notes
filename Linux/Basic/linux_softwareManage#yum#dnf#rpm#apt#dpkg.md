@@ -22,7 +22,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
-| 查找包  | yum/dnf search <package_name>                              | rpm -qa <rpm_name>           |
+| 搜索包  | yum/dnf search <package_key>                               | rpm -qa <rpm_name>           |
 | 已安装  | yum/dnf list installed [<package_name>]                    |                              |
 | 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
 | 锁定版本 | yum/dnf versionlock add <package_name>[-version]           |                              |
@@ -44,21 +44,21 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 | 操作   | apt/apt-get命令                                                                    |
 | ---- | -------------------------------------------------------------------------------- |
-| 编辑源  |  apt edit-sources [<source_name>]                                            |
-| 更新源  |  apt/apt-get update                                                          |
-| 安装包  |  apt/apt-get install <package_name>[=<version\>]                             |
-| 升级包  |  apt/apt-get upgrade <package_name>                                          |
-| 卸载包  |  apt/apt-get remove <package_name>                                           |
-| 清除包  |  apt/apt-get purge <package_name>                                            |
+| 编辑源  | apt edit-sources [<source_name>]                                                 |
+| 更新源  | apt/apt-get update                                                               |
+| 安装包  | apt/apt-get install <package_name>[=<version\>]                                  |
+| 升级包  | apt/apt-get upgrade <package_name>                                               |
+| 卸载包  | apt/apt-get remove <package_name>                                                |
+| 清除包  | apt/apt-get purge <package_name>                                                 |
 | 已安装  | apt list [<package_name>] -i/--installed                                         |
 | 查找包  | apt/apt-cache search <package_name> --names-only                                 |
 | 安装细节 | apt/apt-cache show <package_name>                                                |
-| 修复依赖 |  apt-get -f install                                                          |
-| 卸载依赖 |  apt-get autoremove                                                          |
+| 修复依赖 | apt-get -f install                                                               |
+| 卸载依赖 | apt-get autoremove                                                               |
 | 历史版本 | apt-cache policy <package_name>                                                  |
 | 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |
-| 锁定版本 |  apt-mark hold <package_name>                                                |
-| 解锁锁定 |  apt-mark unhold <package_name>                                              |
+| 锁定版本 | apt-mark hold <package_name>                                                     |
+| 解锁锁定 | apt-mark unhold <package_name>                                                   |
 | 查看锁定 | apt-mark showhold                                                                |
 
 </br>
