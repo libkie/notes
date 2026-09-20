@@ -54,7 +54,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 卸载包  | apt/apt-get remove <package_name>                                                | dpkg -r 包名 |
 | 清除包  | apt/apt-get purge <package_name>                                                 | dpkg -P 包名 |
 | 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l    |
-| 查找包  | apt/apt-cache search <package_name> --names-only                                 |            |
+| 搜索包  | apt/apt-cache search <package_name> --names-only                                 |            |
 | 安装细节 | apt/apt-cache show <package_name>                                                |            |
 | 修复依赖 | apt-get -f install                                                               |            |
 | 卸载依赖 | apt-get autoremove                                                               |            |
