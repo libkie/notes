@@ -22,8 +22,10 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
-| 搜索包  | yum/dnf search <package_key>                               | rpm -qa <rpm_name>           |
-| 已安装  | yum/dnf list installed [<package_name>]                    |                              |
+| 搜索包  | yum/dnf search <package_key>                               |                              |
+| 已安装  | yum/dnf list installed [<package_name>]                    | rpm -qa [<rpm_name>]         |
+| 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
+| 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
 | 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
 | 锁定版本 | yum/dnf versionlock add <package_name>[-version]           |                              |
 | 解锁锁定 | yum/dnf versionlock delete <package_name>                  |                              |
