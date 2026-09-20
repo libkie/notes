@@ -1,9 +1,34 @@
-# Linux 软件管理（yum, apt/apt-get, dpkg/rpm）
+# Linux 软件管理（apt/apt-get/dpkg, yum/dnf/rpm）
 
 </br>
 </br>
 
-## yum
+## RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
+
+1. **YUM** 全称：**Yellowdog Updater, Modified** 中文：修改版 Yellowdog 更新器
+
+> YellowDog 是早年一个 Linux 发行版，YUM 基于它的更新工具二次修改。CentOS7/RHEL7 默认。
+
+2. **DNF** 全称：**Dandified YUM** 中文：华丽版 / 升级版 YUM
+
+> Dandified = 改良、更时髦的；**不是首字母缩写词，是短语简写**，YUM 的下一代，RHEL8+/CentOS8+/Fedora 默认；`yum`命令只是 dnf 的软链接。
+
+3. **RPM** 全称：**RPM Package Manager**（原先叫 RedHat Package Manager） 中文：RPM 软件包管理器
+
+> 底层工具，yum/dnf 只是它的前端，直接操作 rpm 包。
+
+## DEB 系（Debian、Ubuntu，`.deb`包）
+
+4. **APT** 全称：**Advanced Package Tool** 中文：高级包工具
+
+> 底层依赖`dpkg`，apt /apt-get/apt-cache 都属于 APT 工具集
+
+5. **dpkg** 全称：**Debian Package**
+
+> Debian 底层包工具，apt 是 dpkg 的前端
+
+
+## yum/dnf
 
 | 操作 | 命令 |
 | ---- | ---- |
