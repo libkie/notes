@@ -13,19 +13,21 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 ### RPM 包管理
 
-| 操作   | yum/dnf命令                                                  | rpm命令                        |
+| 操作   | yum/dnf                                                    | rpm                          |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
 | 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
 | 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
 | 仅下载  | yum/dnf install <package_name> --downloadonly              |                              |
 | 本地安装 | yum/dnf localinstall <rpm_name>                            | rpm -ivh <rpm_name>          |
-| 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
+| 卸载包  | yum/dnf remove/erase <package_name>                        | rpm -e [--nodeps] <rpm_name> |
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
 
+ps: `yum/dnf erase` 只是 `remove` 的别名，两者完全一样
+
 ### RPM 包信息
 
-| 操作   | yum/dnf命令                                    | rpm命令                |
+| 操作   | yum/dnf                                      | rpm                  |
 | ---- | -------------------------------------------- | -------------------- |
 | 搜索包  | yum/dnf search <package_key>                 |                      |
 | 已安装  | yum/dnf list installed [<package_name>]      | rpm -qa [<rpm_name>] |
@@ -43,7 +45,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 锁定清空 | yum/dnf versionlock clear                        |
 | 锁定查看 | yum/dnf versionlock list                         |
 
-tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
+ps: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
 </br>
 
@@ -57,7 +59,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ### DEB 包管理
 
-| 操作   | apt/apt-get命令                                   | dpkg命令                               |
+| 操作   | apt/apt-get                                     | dpkg                                 |
 | ---- | ----------------------------------------------- | ------------------------------------ |
 | 编辑源  | apt edit-sources [<source_name>]                |                                      |
 | 更新源  | apt/apt-get update                              |                                      |
@@ -70,7 +72,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ### DEB 包信息
 
-| 操作   | apt/apt-cache命令                                                                 | dpkg命令                                           |
+| 操作   | apt/apt-cache                                                                   | dpkg                                             |
 | ---- | ------------------------------------------------------------------------------- | ------------------------------------------------ |
 | 搜索包  | apt/apt-cache search <package_key> --names-only                                 | dpkg -S <deb_name>                               |
 | 已安装  | apt/apt-get list [<package_name>] -i/--installed                                | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
@@ -157,7 +159,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
     # make uninstall
     ```
 
-    note：因为没有使用包管理器安装，所以需要手动删除安装的文件。如果你在配置时指定了 --prefix，只需删除该目录即可。
+ps：因为没有使用包管理器安装，所以需要手动删除安装的文件。如果你在配置时指定了 --prefix，只需删除该目录即可。
 
 </br>
 
