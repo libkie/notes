@@ -13,17 +13,17 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 ### RPM 包管理
 
-| 操作   | yum/dnf                                                    | rpm                          |
-| ---- | ---------------------------------------------------------- | ---------------------------- |
-| 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
-| 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
-| 仅下载  | yum/dnf install <package_name> --downloadonly              |                              |
-| 本地安装 | yum/dnf localinstall <rpm_name>                            | rpm -ivh <rpm_name>          |
-| 卸载包  | yum/dnf remove/erase <package_name>                        | rpm -e [--nodeps] <rpm_name> |
-| 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
-| 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
+| 操作   | yum/dnf                                       | rpm                          |
+| ---- | --------------------------------------------- | ---------------------------- |
+| 更新源  | yum/dnf clean all && yum/dnf makecache        |                              |
+| 在线安装 | yum/dnf install <package_name>[-<version\>]   |                              |
+| 仅下载  | yum/dnf install <package_name> --downloadonly |                              |
+| 本地安装 | yum/dnf localinstall <rpm_name>               | rpm -ivh <rpm_name>          |
+| 卸载包  | yum/dnf remove/erase <package_name>           | rpm -e [--nodeps] <rpm_name> |
+| 升级包  | yum/dnf update [<package_name>]               | rpm -Uvh <rpm_name>          |
+| 降级包  | yum/dnf downgrade <package_name>-<version\>   |                              |
 
-ps: `yum/dnf erase` 只是 `remove` 的别名，两者完全一样
+ps: `erase` 是 `remove` 的别名，`upgrade` 是 `update` 的别名，它们完全一样
 
 ### RPM 包信息
 
