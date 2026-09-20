@@ -76,7 +76,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 搜索包  | apt/apt-cache search <package_key> --names-only                                 | dpkg -S <deb_name>                               |
 | 已安装  | apt/apt-get list [<package_name>] -i/--installed                                | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
 | 可用版本 | apt list <package_name> -a/--all-versions </br>apt-cache madison <package_name> |                                                  |
-| 包依赖  | apt-cache depends <package_name>                                                | rpm -qi <rpm_name>                               |
+| 包依赖  | apt-cache depends <package_name>                                                |                                                  |
 | 包详情  | apt/apt-cache show <package_name>                                               | dpkg -s <deb_name>                               |
 | 安装细节 | apt/apt-cache show <package_name>                                               |                                                  |
 
