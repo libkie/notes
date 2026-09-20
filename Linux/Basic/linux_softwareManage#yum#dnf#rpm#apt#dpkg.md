@@ -17,8 +17,8 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
 | 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
-| 安装包  | yum/dnf install <package_name>[-<version\>]                | rpm -ivh <rpm_name>          |
-| b    |                                                            |                              |
+| 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
+| 本地安装 | yum/dnf localinstall <package_name>[-<version\>]           | rpm -ivh <rpm_name>          |
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
