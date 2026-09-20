@@ -66,8 +66,8 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 升级包  | apt/apt-get upgrade [<package_name>]            |                                      |
 | 卸载包  | apt/apt-get remove <package_name>               | dpkg -r <deb_name>                   |
 | 清除包  | apt/apt-get purge <package_name>                | dpkg -P/--purge <deb_name>           |
-| 修复依赖 | apt-get -f install                              |                                      |
-| 卸载依赖 | apt-get autoremove                              |                                      |
+| 修复依赖 | apt/apt-get -f install                          |                                      |
+| 卸载依赖 | apt/apt-get autoremove                          |                                      |
 
 ### DEB 包信息
 
