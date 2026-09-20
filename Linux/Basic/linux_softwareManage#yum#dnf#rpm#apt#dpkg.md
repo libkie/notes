@@ -1,4 +1,4 @@
-# Linux 软件管理（apt/apt-get/dpkg, yum/dnf/rpm）
+# Linux 软件管理（yum/dnf/rpm，apt/apt-get/dpkg）
 
 </br>
 </br>
@@ -16,16 +16,6 @@
 3. **RPM** 全称：**RPM Package Manager**（原先叫 RedHat Package Manager） 中文：RPM 软件包管理器
 
 > 底层工具，yum/dnf 只是它的前端，直接操作 rpm 包。
-
-## DEB 系（Debian、Ubuntu，`.deb`包）
-
-4. **APT** 全称：**Advanced Package Tool** 中文：高级包工具
-
-> 底层依赖`dpkg`，apt /apt-get/apt-cache 都属于 APT 工具集
-
-5. **dpkg** 全称：**Debian Package**
-
-> Debian 底层包工具，apt 是 dpkg 的前端
 
 
 ## yum/dnf
@@ -50,6 +40,18 @@ tip: 锁定版本需要自己安装 sudo yum install yum-plugin-versionlock
 </br>
 
 ## apt/apt-get
+
+## DEB 系（Debian、Ubuntu，`.deb`包）
+
+4. **APT** 全称：**Advanced Package Tool** 中文：高级包工具
+
+> 底层依赖`dpkg`，apt /apt-get/apt-cache 都属于 APT 工具集
+
+5. **dpkg** 全称：**Debian Package**
+
+> Debian 底层包工具，apt 是 dpkg 的前端
+
+
 
 | 操作 | 命令 |
 | ---- | ---- |
