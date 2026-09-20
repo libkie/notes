@@ -14,20 +14,20 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
-| 操作   | yum/dnf/dnf命令                                          | rpm命令                        |
-| ---- | -------------------------------------------------- | ---------------------------- |
+| 操作   | yum/dnf命令                                                  | rpm命令                        |
+| ---- | ---------------------------------------------------------- | ---------------------------- |
 | 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
-| 安装包  | yum/dnf install <package_name>[-<version\>]            | rpm -ivh <rpm_name>          |
+| 安装包  | yum/dnf install <package_name>[-<version\>]                | rpm -ivh <rpm_name>          |
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
-| 卸载包  | yum/dnf remove <package_name>                          | rpm -e [--nodeps] <rpm_name> |
-| 降级包  | yum/dnf downgrade <package_name>-<version\>            |                              |
-| 查找包  | yum/dnf search <package_name>                          | rpm -qa <rpm_name>           |
-| 已安装  | yum/dnf list installed [<package_name>]                |                              |
-| 可用版本 | yum/dnf list <package_name> --showduplicates           |                              |
-| 锁定版本 | yum/dnf versionlock add <package_name>[-version]       |                              |
-| 解锁锁定 | yum/dnf versionlock delete <package_name>              |                              |
-| 清空锁定 | yum/dnf versionlock clear                              |                              |
-| 查看锁定 | yum/dnf versionlock list                               |                              |
+| 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
+| 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
+| 查找包  | yum/dnf search <package_name>                              | rpm -qa <rpm_name>           |
+| 已安装  | yum/dnf list installed [<package_name>]                    |                              |
+| 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
+| 锁定版本 | yum/dnf versionlock add <package_name>[-version]           |                              |
+| 解锁锁定 | yum/dnf versionlock delete <package_name>                  |                              |
+| 清空锁定 | yum/dnf versionlock clear                                  |                              |
+| 查看锁定 | yum/dnf versionlock list                                   |                              |
 
 tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
