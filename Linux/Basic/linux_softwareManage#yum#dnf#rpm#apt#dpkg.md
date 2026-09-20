@@ -3,7 +3,6 @@
 </br>
 </br>
 
-
 ## 一、yum/dnf/rpm
 
 RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
@@ -99,7 +98,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 卸载  |                    |                    |
 | 清除  |                    |                    |
 | 查找  |                    |                    |
-| 包信息 | dpkg -s <deb_name> | rpm -qi <rpm_name> |
+| 包信息 |                    | rpm -qi <rpm_name> |
 | 包内容 | dpkg -L <deb_name> | rpm -ql <rpm_name> |
 | 查包名 |                    |                    |
 
