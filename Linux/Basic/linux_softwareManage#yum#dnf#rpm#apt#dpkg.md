@@ -4,23 +4,17 @@
 </br>
 
 
-## yum/dnf
+## 一、yum/dnf
 
 RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
-1. **YUM** 全称：**Yellowdog Updater, Modified** 中文：修改版 Yellowdog 更新器
+1. **YUM**，**Yellowdog Updater, Modified** ：修改版 Yellowdog 更新器（CentOS7/RHEL7 默认）。YellowDog 是早年一个 Linux 发行版，YUM 基于它的更新工具二次修改。
 
-> YellowDog 是早年一个 Linux 发行版，YUM 基于它的更新工具二次修改。CentOS7/RHEL7 默认。
+2. **DNF**，**Dandified YUM** ：华丽版 / 升级版 YUM（RHEL8+/CentOS8+/Fedora 默认；`yum`命令只是 dnf 的软链接）
 
-2. **DNF** 全称：**Dandified YUM** 中文：华丽版 / 升级版 YUM
+3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
-> Dandified = 改良、更时髦的；**不是首字母缩写词，是短语简写**，YUM 的下一代，RHEL8+/CentOS8+/Fedora 默认；`yum`命令只是 dnf 的软链接。
-
-3. **RPM** 全称：**RPM Package Manager**（原先叫 RedHat Package Manager） 中文：RPM 软件包管理器
-
-> 底层工具，yum/dnf 只是它的前端，直接操作 rpm 包。
-
-| 操作   | 命令                                                          |
+| 操作   | yum/dnf命令                                                   |
 | ---- | ----------------------------------------------------------- |
 | 更新源  | sudo yum clean all && sudo yum makecache                    |
 | 安装包  | sudo yum install <package_name>[-<version\>]                |
@@ -39,21 +33,15 @@ tip: 锁定版本需要自己安装 sudo yum install yum-plugin-versionlock
 
 </br>
 
-## apt/apt-get
+## 二、apt/apt-get
 
-## DEB 系（Debian、Ubuntu，`.deb`包）
+DEB 系（Debian、Ubuntu，`.deb`包）
 
-4. **APT** 全称：**Advanced Package Tool** 中文：高级包工具
+1. **APT**，**Advanced Package Tool** ：高级包工具。底层依赖`dpkg`，apt /apt-get/apt-cache 都属于 APT 工具集
 
-> 底层依赖`dpkg`，apt /apt-get/apt-cache 都属于 APT 工具集
+2. **dpkg**，**Debian Package**。apt 的底层工具
 
-5. **dpkg** 全称：**Debian Package**
-
-> Debian 底层包工具，apt 是 dpkg 的前端
-
-
-
-| 操作   | 命令                                                                               |
+| 操作   | apt/apt-get命令                                                                    |
 | ---- | -------------------------------------------------------------------------------- |
 | 编辑源  | sudo apt edit-sources [<source_name>]                                            |
 | 更新源  | sudo apt/apt-get update                                                          |
@@ -74,7 +62,7 @@ tip: 锁定版本需要自己安装 sudo yum install yum-plugin-versionlock
 
 </br>
 
-## dpkg/rpm
+## 三、dpkg/rpm
 
 | 操作 | dpkg | rpm |
 | ---- | ---- | ---- |
