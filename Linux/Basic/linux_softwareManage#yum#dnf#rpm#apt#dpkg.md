@@ -67,16 +67,25 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 升级包  | apt/apt-get upgrade [<package_name>]                                             |                                                  |
 | 卸载包  | apt/apt-get remove <package_name>                                                | dpkg -r <deb_name>                               |
 | 清除包  | apt/apt-get purge <package_name>                                                 | dpkg -P/--purge <deb_name>                       |
+
+### 包信息
+
 | 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
+| ---- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
 | 搜索包  | apt/apt-cache search <package_name> --names-only                                 | dpkg -S <file_name>                              |
 | 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |                                                  |
 | 安装细节 | apt/apt-cache show <package_name>                                                |                                                  |
 | 修复依赖 | apt-get -f install                                                               |                                                  |
 | 卸载依赖 | apt-get autoremove                                                               |                                                  |
 | 历史版本 | apt-cache policy <package_name>                                                  |                                                  |
-| 锁定版本 | apt-mark hold <package_name>                                                     |                                                  |
-| 锁定解锁 | apt-mark unhold <package_name>                                                   |                                                  |
-| 锁定查看 | apt-mark showhold                                                                |                                                  |
+
+
+### 其他
+
+| 锁定版本 | apt-mark hold <package_name>   |
+| ---- | ------------------------------ |
+| 锁定解锁 | apt-mark unhold <package_name> |
+| 锁定查看 | apt-mark showhold              |
 
 </br>
 
