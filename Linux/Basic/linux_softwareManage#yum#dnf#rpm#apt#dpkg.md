@@ -58,14 +58,16 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ### DEB 包管理
 
-| 操作  | apt/apt-get命令                                   | dpkg命令                               |
-| --- | ----------------------------------------------- | ------------------------------------ |
-| 编辑源 | apt edit-sources [<source_name>]                |                                      |
-| 更新源 | apt/apt-get update                              |                                      |
-| 安装包 | apt/apt-get install <package_name>[=<version\>] | dpkg -i <deb_name> [--force-depends] |
-| 升级包 | apt/apt-get upgrade [<package_name>]            |                                      |
-| 卸载包 | apt/apt-get remove <package_name>               | dpkg -r <deb_name>                   |
-| 清除包 | apt/apt-get purge <package_name>                | dpkg -P/--purge <deb_name>           |
+| 操作   | apt/apt-get命令                                   | dpkg命令                               |
+| ---- | ----------------------------------------------- | ------------------------------------ |
+| 编辑源  | apt edit-sources [<source_name>]                |                                      |
+| 更新源  | apt/apt-get update                              |                                      |
+| 安装包  | apt/apt-get install <package_name>[=<version\>] | dpkg -i <deb_name> [--force-depends] |
+| 升级包  | apt/apt-get upgrade [<package_name>]            |                                      |
+| 卸载包  | apt/apt-get remove <package_name>               | dpkg -r <deb_name>                   |
+| 清除包  | apt/apt-get purge <package_name>                | dpkg -P/--purge <deb_name>           |
+| 修复依赖 | apt-get -f install                              |                                      |
+| 卸载依赖 | apt-get autoremove                              |                                      |
 
 ### DEB 包信息
 
@@ -76,8 +78,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 可用版本 | apt list <package_name> -a/--all-versions </br>apt-cache madison <package_name> |                                                  |
 | 历史版本 | apt-cache policy <package_name>                                                 |                                                  |
 | 安装细节 | apt/apt-cache show <package_name>                                               |                                                  |
-| 修复依赖 | apt-get -f install                                                              |                                                  |
-| 卸载依赖 | apt-get autoremove                                                              |                                                  |
+
 
 ### DEB 版本锁
 
