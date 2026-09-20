@@ -3,7 +3,7 @@
 </br>
 </br>
 
-## 一、yum/dnf/rpm
+## 一、RPM 系
 
 RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
@@ -34,6 +34,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 可用版本 | yum/dnf list <package_name> --showduplicates |                      |
 | 包依赖  | yum/dnf deplist <package_name>               | rpm -qR <rpm_name>   |
 | 包详情  | yum/dnf info <package_name>                  | rpm -qi <rpm_name>   |
+| 包内容  |                                              | rpm -ql <rpm_name>   |
 
 ### RPM 版本锁
 
@@ -48,7 +49,7 @@ tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
 </br>
 
-## 二、apt/apt-get/dpkg
+## 二、DEB 系
 
 DEB 系（Debian、Ubuntu，`.deb`包）
 
@@ -78,7 +79,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 可用版本 | apt list <package_name> -a/--all-versions </br>apt-cache madison <package_name> |                                                  |
 | 包依赖  | apt-cache depends <package_name>                                                |                                                  |
 | 包详情  | apt/apt-cache show <package_name>                                               | dpkg -s <deb_name>                               |
-| 安装细节 | apt/apt-cache show <package_name>                                               |                                                  |
+| 包内容  |                                                                                 | dpkg -L <deb_name>                               |
 
 
 ### DEB 版本锁
@@ -93,16 +94,16 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ## 三、dpkg/rpm
 
-| 操作  | dpkg               | rpm                |
-| --- | ------------------ | ------------------ |
-| 安装  |                    |                    |
-| 升级  |                    |                    |
-| 卸载  |                    |                    |
-| 清除  |                    |                    |
-| 查找  |                    |                    |
-| 包信息 |                    | rpm -qi <rpm_name> |
-| 包内容 | dpkg -L <deb_name> | rpm -ql <rpm_name> |
-| 查包名 |                    |                    |
+| 操作  | dpkg | rpm                |
+| --- | ---- | ------------------ |
+| 安装  |      |                    |
+| 升级  |      |                    |
+| 卸载  |      |                    |
+| 清除  |      |                    |
+| 查找  |      |                    |
+| 包信息 |      | rpm -qi <rpm_name> |
+|     |      |                    |
+| 查包名 |      |                    |
 
 </br>
 
