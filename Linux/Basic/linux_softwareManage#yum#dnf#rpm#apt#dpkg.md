@@ -17,21 +17,21 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
 | 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
-| 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
-| 下载不装 | yum/dnf install <package_name> --downloadonly              |                              |
-| 本地安装 | yum/dnf localinstall <rpm_name>                            | rpm -ivh <rpm_name>          |
-| 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
-| 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
-| 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
 | 搜索包  | yum/dnf search <package_key>                               |                              |
 | 已安装  | yum/dnf list installed [<package_name>]                    | rpm -qa [<rpm_name>]         |
+| 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
+| 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
+| 仅下载  | yum/dnf install <package_name> --downloadonly              |                              |
+| 本地安装 | yum/dnf localinstall <rpm_name>                            | rpm -ivh <rpm_name>          |
+| 卸载包  | yum/dnf remove <package_name>                              | rpm -e [--nodeps] <rpm_name> |
+| 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
+| 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
 | 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
 | 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
-| 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
 | 锁定版本 | yum/dnf versionlock add <package_name>[-version]           |                              |
-| 解锁锁定 | yum/dnf versionlock delete <package_name>                  |                              |
-| 清空锁定 | yum/dnf versionlock clear                                  |                              |
-| 查看锁定 | yum/dnf versionlock list                                   |                              |
+| 锁定解锁 | yum/dnf versionlock delete <package_name>                  |                              |
+| 锁定清空 | yum/dnf versionlock clear                                  |                              |
+| 锁定查看 | yum/dnf versionlock list                                   |                              |
 
 tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
@@ -45,39 +45,39 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 2. **dpkg**，**Debian Package**。apt 的底层工具
 
-| 操作   | apt/apt-get命令                                                                    | dpkg命令     |
-| ---- | -------------------------------------------------------------------------------- | ---------- |
-| 编辑源  | apt edit-sources [<source_name>]                                                 |            |
-| 更新源  | apt/apt-get update                                                               |            |
-| 安装包  | apt/apt-get install <package_name>[=<version\>]                                  | dpkg -i    |
-| 升级包  | apt/apt-get upgrade [<package_name>]                                             |            |
-| 卸载包  | apt/apt-get remove <package_name>                                                | dpkg -r 包名 |
-| 清除包  | apt/apt-get purge <package_name>                                                 | dpkg -P 包名 |
-| 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l    |
-| 搜索包  | apt/apt-cache search <package_name> --names-only                                 |            |
-| 安装细节 | apt/apt-cache show <package_name>                                                |            |
-| 修复依赖 | apt-get -f install                                                               |            |
-| 卸载依赖 | apt-get autoremove                                                               |            |
-| 历史版本 | apt-cache policy <package_name>                                                  |            |
-| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |            |
-| 锁定版本 | apt-mark hold <package_name>                                                     |            |
-| 解锁锁定 | apt-mark unhold <package_name>                                                   |            |
-| 查看锁定 | apt-mark showhold                                                                |            |
+| 操作   | apt/apt-get命令                                                                    | dpkg命令                                           |
+| ---- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 编辑源  | apt edit-sources [<source_name>]                                                 |                                                  |
+| 更新源  | apt/apt-get update                                                               |                                                  |
+| 搜索包  | apt/apt-cache search <package_name> --names-only                                 | dpkg -S <file_name>                              |
+| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |                                                  |
+| 安装包  | apt/apt-get install <package_name>[=<version\>]                                  | dpkg -i <deb_name> [--force-depends]             |
+| 升级包  | apt/apt-get upgrade [<package_name>]                                             |                                                  |
+| 卸载包  | apt/apt-get remove <package_name>                                                | dpkg -r <deb_name>                               |
+| 清除包  | apt/apt-get purge <package_name>                                                 | dpkg -P/--purge <deb_name>                       |
+| 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
+| 安装细节 | apt/apt-cache show <package_name>                                                |                                                  |
+| 修复依赖 | apt-get -f install                                                               |                                                  |
+| 卸载依赖 | apt-get autoremove                                                               |                                                  |
+| 历史版本 | apt-cache policy <package_name>                                                  |                                                  |
+| 锁定版本 | apt-mark hold <package_name>                                                     |                                                  |
+| 锁定解锁 | apt-mark unhold <package_name>                                                   |                                                  |
+| 锁定查看 | apt-mark showhold                                                                |                                                  |
 
 </br>
 
 ## 三、dpkg/rpm
 
-| 操作  | dpkg                                               | rpm                |
-| --- | -------------------------------------------------- | ------------------ |
-| 安装  | dpkg -i <deb_name> [--force-depends]               |                    |
-| 升级  |                                                    |                    |
-| 卸载  | dpkg -r <deb_name>                                 |                    |
-| 清除  | dpkg -P/--purge <deb_name>                         |                    |
-| 查找  | dpkg -l <deb_name> </br>  dpkg-query -W "*chrome*" |                    |
-| 包信息 | dpkg -s <deb_name>                                 | rpm -qi <rpm_name> |
-| 包内容 | dpkg -L <deb_name>                                 | rpm -ql <rpm_name> |
-| 查包名 | dpkg -S <file_name>                                |                    |
+| 操作  | dpkg               | rpm                |
+| --- | ------------------ | ------------------ |
+| 安装  |                    |                    |
+| 升级  |                    |                    |
+| 卸载  |                    |                    |
+| 清除  |                    |                    |
+| 查找  |                    |                    |
+| 包信息 | dpkg -s <deb_name> | rpm -qi <rpm_name> |
+| 包内容 | dpkg -L <deb_name> | rpm -ql <rpm_name> |
+| 查包名 |                    |                    |
 
 </br>
 
