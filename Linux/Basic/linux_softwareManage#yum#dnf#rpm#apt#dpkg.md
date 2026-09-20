@@ -19,11 +19,6 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
 | 更新源  | yum/dnf clean all && yum/dnf makecache                     |                              |
-| 搜索包  | yum/dnf search <package_key>                               |                              |
-| 已安装  | yum/dnf list installed [<package_name>]                    | rpm -qa [<rpm_name>]         |
-| 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
-| 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
-| 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
 | 在线安装 | yum/dnf install <package_name>[-<version\>]                |                              |
 | 仅下载  | yum/dnf install <package_name> --downloadonly              |                              |
 | 本地安装 | yum/dnf localinstall <rpm_name>                            | rpm -ivh <rpm_name>          |
@@ -31,12 +26,14 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
 
-包查找
+包信息
 
-|     |     |
-| --- | --- |
-|     |     |
-
+| 搜索包  | yum/dnf search <package_key>                               |                              |
+| ---- | ---------------------------------------------------------- | ---------------------------- |
+| 已安装  | yum/dnf list installed [<package_name>]                    | rpm -qa [<rpm_name>]         |
+| 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
+| 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
+| 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
 
 其他
 
