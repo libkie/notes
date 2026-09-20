@@ -14,22 +14,22 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
-| 操作   | yum/dnf命令                                                   |
-| ---- | ----------------------------------------------------------- |
-| 更新源  | sudo yum clean all && sudo yum makecache                    |
-| 安装包  | sudo yum install <package_name>[-<version\>]                |
-| 升级包  | sudo yum upgrade <package_name> </br> 升级所有： sudo yum update |
-| 卸载包  | sudo yum remove <package_name>                              |
-| 降级包  | sudo yum downgrade <package_name>-<version\>                |
-| 查找包  | yum search <package_name>                                   |
-| 已安装  | yum list installed [<package_name>]                         |
-| 可用版本 | yum list <package_name> --showduplicates                    |
-| 锁定版本 | sudo yum versionlock add <package_name>[-version]           |
-| 解锁锁定 | sudo yum versionlock delete <package_name>                  |
-| 清空锁定 | sudo yum versionlock clear                                  |
-| 查看锁定 | yum versionlock list                                        |
+| 操作   | yum/dnf命令                                          | rpm命令                        |
+| ---- | -------------------------------------------------- | ---------------------------- |
+| 更新源  | yum clean all && yum makecache                     |                              |
+| 安装包  | yum install <package_name>[-<version\>]            | rpm -ivh <rpm_name>          |
+| 升级包  | yum upgrade <package_name> </br> 升级所有：  yum update | rpm -Uvh <rpm_name>          |
+| 卸载包  | yum remove <package_name>                          | rpm -e [--nodeps] <rpm_name> |
+| 降级包  | yum downgrade <package_name>-<version\>            |                              |
+| 查找包  | yum search <package_name>                          | rpm -qa <rpm_name>           |
+| 已安装  | yum list installed [<package_name>]                | rpm -qf <file_name>          |
+| 可用版本 | yum list <package_name> --showduplicates           |                              |
+| 锁定版本 | yum versionlock add <package_name>[-version]       |                              |
+| 解锁锁定 | yum versionlock delete <package_name>              |                              |
+| 清空锁定 | yum versionlock clear                              |                              |
+| 查看锁定 | yum versionlock list                               |                              |
 
-tip: 锁定版本需要自己安装 sudo yum install yum-plugin-versionlock
+tip: 锁定版本需要自己安装  yum install yum-plugin-versionlock
 
 </br>
 
@@ -43,37 +43,37 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 | 操作   | apt/apt-get命令                                                                    |
 | ---- | -------------------------------------------------------------------------------- |
-| 编辑源  | sudo apt edit-sources [<source_name>]                                            |
-| 更新源  | sudo apt/apt-get update                                                          |
-| 安装包  | sudo apt/apt-get install <package_name>[=<version\>]                             |
-| 升级包  | sudo apt/apt-get upgrade <package_name>                                          |
-| 卸载包  | sudo apt/apt-get remove <package_name>                                           |
-| 清除包  | sudo apt/apt-get purge <package_name>                                            |
+| 编辑源  |  apt edit-sources [<source_name>]                                            |
+| 更新源  |  apt/apt-get update                                                          |
+| 安装包  |  apt/apt-get install <package_name>[=<version\>]                             |
+| 升级包  |  apt/apt-get upgrade <package_name>                                          |
+| 卸载包  |  apt/apt-get remove <package_name>                                           |
+| 清除包  |  apt/apt-get purge <package_name>                                            |
 | 已安装  | apt list [<package_name>] -i/--installed                                         |
 | 查找包  | apt/apt-cache search <package_name> --names-only                                 |
 | 安装细节 | apt/apt-cache show <package_name>                                                |
-| 修复依赖 | sudo apt-get -f install                                                          |
-| 卸载依赖 | sudo apt-get autoremove                                                          |
+| 修复依赖 |  apt-get -f install                                                          |
+| 卸载依赖 |  apt-get autoremove                                                          |
 | 历史版本 | apt-cache policy <package_name>                                                  |
 | 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |
-| 锁定版本 | sudo apt-mark hold <package_name>                                                |
-| 解锁锁定 | sudo apt-mark unhold <package_name>                                              |
+| 锁定版本 |  apt-mark hold <package_name>                                                |
+| 解锁锁定 |  apt-mark unhold <package_name>                                              |
 | 查看锁定 | apt-mark showhold                                                                |
 
 </br>
 
 ## 三、dpkg/rpm
 
-| 操作 | dpkg | rpm |
-| ---- | ---- | ---- |
-| 安装 | sudo dpkg -i <deb_name> [--force-depends] | sudo rpm -ivh <rpm_name> |
-| 升级 |  | sudo rpm -Uvh <rpm_name> |
-| 卸载 | sudo dpkg -r <deb_name> | sudo rpm -e [--nodeps] <rpm_name> |
-| 清除 | sudo dpkg -P/--purge <deb_name> |  |
-| 查找 | dpkg -l <deb_name> </br> sudo dpkg-query -W "*chrome*" | rpm -qa <rpm_name> |
-| 包信息 | dpkg -s <deb_name> | rpm -qi <rpm_name> |
-| 包内容 | dpkg -L <deb_name> | rpm -ql <rpm_name> |
-| 查包名 | dpkg -S <file_name> |rpm -qf <file_name> |
+| 操作  | dpkg                                               | rpm                |
+| --- | -------------------------------------------------- | ------------------ |
+| 安装  | dpkg -i <deb_name> [--force-depends]               |                    |
+| 升级  |                                                    |                    |
+| 卸载  | dpkg -r <deb_name>                                 |                    |
+| 清除  | dpkg -P/--purge <deb_name>                         |                    |
+| 查找  | dpkg -l <deb_name> </br>  dpkg-query -W "*chrome*" |                    |
+| 包信息 | dpkg -s <deb_name>                                 | rpm -qi <rpm_name> |
+| 包内容 | dpkg -L <deb_name>                                 | rpm -ql <rpm_name> |
+| 查包名 | dpkg -S <file_name>                                |                    |
 
 </br>
 
@@ -94,7 +94,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
     ```sh
     #安装编译工具和依赖，比如 gcc（GNU 编译器集合）和 make。
-    sudo yum install pcre-devel zlib-devel # 安装 nginx 依赖包
+     yum install pcre-devel zlib-devel # 安装 nginx 依赖包
     ```
 
 3. 安装（3步曲）
@@ -105,7 +105,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
     make    #编译
 
-    sudo make install    #安装
+     make install    #安装
     ```
 
 4. 验证
@@ -113,8 +113,8 @@ DEB 系（Debian、Ubuntu，`.deb`包）
     ```sh
     #启停验证
     /usr/local/nginx/sbin/nginx -version
-    sudo /usr/local/nginx/sbin/nginx
-    sudo /usr/local/nginx/sbin/nginx -s stop
+     /usr/local/nginx/sbin/nginx
+     /usr/local/nginx/sbin/nginx -s stop
     ```
 
 5. 软链接（可选）
@@ -124,25 +124,25 @@ DEB 系（Debian、Ubuntu，`.deb`包）
     echo $PATH
 
     #创建软链接
-    sudo ls -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+     ls -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 
     #测试软链接
     nginx -version
-    sudo nginx
-    sudo nginx -s stop
+     nginx
+     nginx -s stop
     ```
 
 6. 卸载
 
     ```sh
     #1. 删除软链接
-    sudo rm -f /usr/sbin/nginx
+     rm -f /usr/sbin/nginx
 
     #2. 删除安装目录
-    sudo rm -rf /usr/local/nginx
+     rm -rf /usr/local/nginx
 
     #2. 执行make自带的卸载程序卸载（部分软件支持）
-    #sudo make uninstall
+    # make uninstall
     ```
 
     note：因为没有使用包管理器安装，所以需要手动删除安装的文件。如果你在配置时指定了 --prefix，只需删除该目录即可。

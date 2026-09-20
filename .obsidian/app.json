@@ -4,5 +4,6 @@
   "attachmentFolderPath": "./附件",
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
-  "showLineNumber": true
+  "showLineNumber": true,
+  "readableLineLength": false
 }
