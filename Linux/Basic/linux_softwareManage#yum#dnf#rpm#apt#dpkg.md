@@ -14,7 +14,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
-### RPM包管理
+### RPM 包管理
 
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
@@ -26,7 +26,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
 
-### 包信息
+### RPM 包信息
 
 | 操作   | yum/dnf命令                                    | rpm命令                |
 | ---- | -------------------------------------------- | -------------------- |
@@ -36,7 +36,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 包依赖  | yum/dnf deplist <package_name>               | rpm -qR <rpm_name>   |
 | 包详情  | yum/dnf info <package_name>                  | rpm -qi <rpm_name>   |
 
-### 版本锁
+### RPM 版本锁
 
 | 版本锁  | 命令                                               |
 | ---- | ------------------------------------------------ |
@@ -57,7 +57,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 2. **dpkg**，**Debian Package**。apt 的底层工具
 
-### 包管理
+### DEB 包管理
 
 | 操作  | apt/apt-get命令                                   | dpkg命令                               |
 | --- | ----------------------------------------------- | ------------------------------------ |
@@ -68,7 +68,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 卸载包 | apt/apt-get remove <package_name>               | dpkg -r <deb_name>                   |
 | 清除包 | apt/apt-get purge <package_name>                | dpkg -P/--purge <deb_name>           |
 
-### 包信息
+### DEB 包信息
 
 | 操作   | apt/apt-get命令                                                                   | dpkg命令                                           |
 | ---- | ------------------------------------------------------------------------------- | ------------------------------------------------ |
@@ -80,8 +80,7 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 修复依赖 | apt-get -f install                                                              |                                                  |
 | 卸载依赖 | apt-get autoremove                                                              |                                                  |
 
-
-### 版本锁
+### DEB 版本锁
 
 | 版本锁  | 命令                             |
 | ---- | ------------------------------ |
