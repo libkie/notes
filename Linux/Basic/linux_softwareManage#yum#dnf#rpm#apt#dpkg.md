@@ -36,7 +36,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 包依赖  | yum/dnf deplist <package_name>               | rpm -qR <rpm_name>   |
 | 包详情  | yum/dnf info <package_name>                  | rpm -qi <rpm_name>   |
 
-### 其他
+### 版本锁
 
 | 版本锁  | 命令                                               |
 | ---- | ------------------------------------------------ |
@@ -59,19 +59,20 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ### 包管理
 
-| 操作   | apt/apt-get命令                                                                    | dpkg命令                                           |
-| ---- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
-| 编辑源  | apt edit-sources [<source_name>]                                                 |                                                  |
-| 更新源  | apt/apt-get update                                                               |                                                  |
-| 安装包  | apt/apt-get install <package_name>[=<version\>]                                  | dpkg -i <deb_name> [--force-depends]             |
-| 升级包  | apt/apt-get upgrade [<package_name>]                                             |                                                  |
-| 卸载包  | apt/apt-get remove <package_name>                                                | dpkg -r <deb_name>                               |
-| 清除包  | apt/apt-get purge <package_name>                                                 | dpkg -P/--purge <deb_name>                       |
+| 操作  | apt/apt-get命令                                   | dpkg命令                               |
+| --- | ----------------------------------------------- | ------------------------------------ |
+| 编辑源 | apt edit-sources [<source_name>]                |                                      |
+| 更新源 | apt/apt-get update                              |                                      |
+| 安装包 | apt/apt-get install <package_name>[=<version\>] | dpkg -i <deb_name> [--force-depends] |
+| 升级包 | apt/apt-get upgrade [<package_name>]            |                                      |
+| 卸载包 | apt/apt-get remove <package_name>               | dpkg -r <deb_name>                   |
+| 清除包 | apt/apt-get purge <package_name>                | dpkg -P/--purge <deb_name>           |
 
 ### 包信息
 
-| 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
+| 操作   | apt/apt-get命令                                                                    | dpkg命令                                           |
 | ---- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
 | 搜索包  | apt/apt-cache search <package_name> --names-only                                 | dpkg -S <file_name>                              |
 | 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |                                                  |
 | 安装细节 | apt/apt-cache show <package_name>                                                |                                                  |
@@ -80,10 +81,11 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 | 历史版本 | apt-cache policy <package_name>                                                  |                                                  |
 
 
-### 其他
+### 版本锁
 
-| 锁定版本 | apt-mark hold <package_name>   |
+| 版本锁  | 命令                             |
 | ---- | ------------------------------ |
+| 锁定版本 | apt-mark hold <package_name>   |
 | 锁定解锁 | apt-mark unhold <package_name> |
 | 锁定查看 | apt-mark showhold              |
 
