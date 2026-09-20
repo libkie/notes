@@ -14,7 +14,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
-### 包管理
+### RPM包管理
 
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
@@ -70,15 +70,15 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 ### 包信息
 
-| 操作   | apt/apt-get命令                                                                    | dpkg命令                                           |
-| ---- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
-| 搜索包  | apt/apt-cache search <package_name> --names-only                                 | dpkg -S <file_name>                              |
-| 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
-| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |                                                  |
-| 安装细节 | apt/apt-cache show <package_name>                                                |                                                  |
-| 修复依赖 | apt-get -f install                                                               |                                                  |
-| 卸载依赖 | apt-get autoremove                                                               |                                                  |
-| 历史版本 | apt-cache policy <package_name>                                                  |                                                  |
+| 操作   | apt/apt-get命令                                                                   | dpkg命令                                           |
+| ---- | ------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 搜索包  | apt/apt-cache search <package_name> --names-only                                | dpkg -S <file_name>                              |
+| 已安装  | apt list [<package_name>] -i/--installed                                        | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
+| 可用版本 | apt list <package_name> -a/--all-versions </br>apt-cache madison <package_name> |                                                  |
+| 历史版本 | apt-cache policy <package_name>                                                 |                                                  |
+| 安装细节 | apt/apt-cache show <package_name>                                               |                                                  |
+| 修复依赖 | apt-get -f install                                                              |                                                  |
+| 卸载依赖 | apt-get autoremove                                                              |                                                  |
 
 
 ### 版本锁
