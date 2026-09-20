@@ -14,7 +14,7 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
 3. **RPM**，**RPM Package Manager**（原先叫 RedHat Package Manager）：RPM 软件包管理器。yum/dnf 的底层工具。
 
-包管理
+### 包管理
 
 | 操作   | yum/dnf命令                                                  | rpm命令                        |
 | ---- | ---------------------------------------------------------- | ---------------------------- |
@@ -26,16 +26,17 @@ RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 | 升级包  | yum/dnf upgrade <package_name> </br> 升级所有：  yum/dnf update | rpm -Uvh <rpm_name>          |
 | 降级包  | yum/dnf downgrade <package_name>-<version\>                |                              |
 
-包信息
+### 包信息
 
-| 搜索包  | yum/dnf search <package_key>                               |                              |
-| ---- | ---------------------------------------------------------- | ---------------------------- |
-| 已安装  | yum/dnf list installed [<package_name>]                    | rpm -qa [<rpm_name>]         |
-| 可用版本 | yum/dnf list <package_name> --showduplicates               |                              |
-| 包依赖  | yum/dnf deplist <package_name>                             | rpm -qR <rpm_name>           |
-| 包详情  | yum/dnf info <package_name>                                | rpm -qi <rpm_name>           |
+| 操作   | yum/dnf命令                                    | rpm命令                |
+| ---- | -------------------------------------------- | -------------------- |
+| 搜索包  | yum/dnf search <package_key>                 |                      |
+| 已安装  | yum/dnf list installed [<package_name>]      | rpm -qa [<rpm_name>] |
+| 可用版本 | yum/dnf list <package_name> --showduplicates |                      |
+| 包依赖  | yum/dnf deplist <package_name>               | rpm -qR <rpm_name>   |
+| 包详情  | yum/dnf info <package_name>                  | rpm -qi <rpm_name>   |
 
-其他
+### 其他
 
 | 版本锁  | 命令                                               |
 | ---- | ------------------------------------------------ |
@@ -56,17 +57,19 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 2. **dpkg**，**Debian Package**。apt 的底层工具
 
+### 包管理
+
 | 操作   | apt/apt-get命令                                                                    | dpkg命令                                           |
 | ---- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
 | 编辑源  | apt edit-sources [<source_name>]                                                 |                                                  |
 | 更新源  | apt/apt-get update                                                               |                                                  |
-| 搜索包  | apt/apt-cache search <package_name> --names-only                                 | dpkg -S <file_name>                              |
-| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |                                                  |
 | 安装包  | apt/apt-get install <package_name>[=<version\>]                                  | dpkg -i <deb_name> [--force-depends]             |
 | 升级包  | apt/apt-get upgrade [<package_name>]                                             |                                                  |
 | 卸载包  | apt/apt-get remove <package_name>                                                | dpkg -r <deb_name>                               |
 | 清除包  | apt/apt-get purge <package_name>                                                 | dpkg -P/--purge <deb_name>                       |
 | 已安装  | apt list [<package_name>] -i/--installed                                         | dpkg -l <deb_name> </br>dpkg-query -W "*chrome*" |
+| 搜索包  | apt/apt-cache search <package_name> --names-only                                 | dpkg -S <file_name>                              |
+| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |                                                  |
 | 安装细节 | apt/apt-cache show <package_name>                                                |                                                  |
 | 修复依赖 | apt-get -f install                                                               |                                                  |
 | 卸载依赖 | apt-get autoremove                                                               |                                                  |
