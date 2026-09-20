@@ -4,7 +4,7 @@
 </br>
 
 
-## 一、yum/dnf
+## 一、yum/dnf/rpm
 
 RPM 系（红帽、CentOS、Rocky、Fedora，`.rpm`包）
 
@@ -37,7 +37,7 @@ tip: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
 
 </br>
 
-## 二、apt/apt-get
+## 二、apt/apt-get/dpkg
 
 DEB 系（Debian、Ubuntu，`.deb`包）
 
@@ -45,24 +45,24 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 2. **dpkg**，**Debian Package**。apt 的底层工具
 
-| 操作   | apt/apt-get命令                                                                    |
-| ---- | -------------------------------------------------------------------------------- |
-| 编辑源  | apt edit-sources [<source_name>]                                                 |
-| 更新源  | apt/apt-get update                                                               |
-| 安装包  | apt/apt-get install <package_name>[=<version\>]                                  |
-| 升级包  | apt/apt-get upgrade <package_name>                                               |
-| 卸载包  | apt/apt-get remove <package_name>                                                |
-| 清除包  | apt/apt-get purge <package_name>                                                 |
-| 已安装  | apt list [<package_name>] -i/--installed                                         |
-| 查找包  | apt/apt-cache search <package_name> --names-only                                 |
-| 安装细节 | apt/apt-cache show <package_name>                                                |
-| 修复依赖 | apt-get -f install                                                               |
-| 卸载依赖 | apt-get autoremove                                                               |
-| 历史版本 | apt-cache policy <package_name>                                                  |
-| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |
-| 锁定版本 | apt-mark hold <package_name>                                                     |
-| 解锁锁定 | apt-mark unhold <package_name>                                                   |
-| 查看锁定 | apt-mark showhold                                                                |
+| 操作   | apt/apt-get命令                                                                    | dpkg命令 |
+| ---- | -------------------------------------------------------------------------------- | ------ |
+| 编辑源  | apt edit-sources [<source_name>]                                                 |        |
+| 更新源  | apt/apt-get update                                                               |        |
+| 安装包  | apt/apt-get install <package_name>[=<version\>]                                  |        |
+| 升级包  | apt/apt-get upgrade <package_name>                                               |        |
+| 卸载包  | apt/apt-get remove <package_name>                                                |        |
+| 清除包  | apt/apt-get purge <package_name>                                                 |        |
+| 已安装  | apt list [<package_name>] -i/--installed                                         |        |
+| 查找包  | apt/apt-cache search <package_name> --names-only                                 |        |
+| 安装细节 | apt/apt-cache show <package_name>                                                |        |
+| 修复依赖 | apt-get -f install                                                               |        |
+| 卸载依赖 | apt-get autoremove                                                               |        |
+| 历史版本 | apt-cache policy <package_name>                                                  |        |
+| 可用版本 | apt list <package_name> -a/--all-versions </br> apt-cache madison <package_name> |        |
+| 锁定版本 | apt-mark hold <package_name>                                                     |        |
+| 解锁锁定 | apt-mark unhold <package_name>                                                   |        |
+| 查看锁定 | apt-mark showhold                                                                |        |
 
 </br>
 
