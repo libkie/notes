@@ -47,6 +47,11 @@ ps: `erase` 是 `remove` 的别名，`upgrade` 是 `update` 的别名，它们�
 | 锁定清空 | yum/dnf versionlock clear                        |
 | 锁定查看 | yum/dnf versionlock list                         |
 
+```sh
+# 反向排除：禁止安装 nginx-1.20.1-1.el8，其他版本正常更新 
+dnf versionlock exclude nginx-1.20.1-1.el8.x86_64
+```
+
 ps: 
 1. 插件需要手动安装：
 	 - CentOS7即以下： yum install -y `yum-plugin-versionlock`
