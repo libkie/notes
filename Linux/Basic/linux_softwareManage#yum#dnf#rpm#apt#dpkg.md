@@ -38,6 +38,8 @@ ps: `erase` 是 `remove` 的别名，`upgrade` 是 `update` 的别名，它们�
 
 ### RPM 版本锁
 
+> **versionlock** 是包管理器插件，作用：**锁定指定 RPM 软件包版本，执行 `yum/dnf update` 时不会升级该包到更高版本**，用来保障业务环境稳定，防止依赖变更、新版本 Bug 导致业务异常（数据库、内核、中间件常用）
+
 | 版本锁  | 命令                                               |
 | ---- | ------------------------------------------------ |
 | 锁定版本 | yum/dnf versionlock add <package_name>[-version] |
@@ -45,7 +47,14 @@ ps: `erase` 是 `remove` 的别名，`upgrade` 是 `update` 的别名，它们�
 | 锁定清空 | yum/dnf versionlock clear                        |
 | 锁定查看 | yum/dnf versionlock list                         |
 
-ps: 锁定版本需要自己安装  yum/dnf install yum-plugin-versionlock
+ps: 
+1. 插件需要手动安装：
+	 - CentOS7即以下： yum install -y `yum-plugin-versionlock`
+	 - CentOS8及以上：dnf install -y `python3-dnf-plugin-versionlock`
+
+2. 版本锁和 `exclude` 的区别：
+	- `exclude=pkgname`：更新时**完全忽略这个包**，不管版本，不能限定只能保留某个版本。
+	- `versionlock`：允许当前锁定版本存在，**拒绝升级到其他版本**，粒度更精细。
 
 </br>
 
