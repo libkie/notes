@@ -95,69 +95,68 @@ DEB 系（Debian、Ubuntu，`.deb`包）
 
 > 以 nginx 安装为例：
 
-1. 准备源代码包
+#### 1. 准备源代码包
 
-    ```sh
-    #从项目的官方网站或代码仓库（如 GitHub）下载源代码
-    wget https://nginx.org/download/nginx-1.24.0.tar.gz     #下载
-    tar -xzvf nginx-1.24.0.tar.gz       #解压
-    cd nginx-1.24.0
-    ```
+```sh
+#从项目的官方网站或代码仓库（如 GitHub）下载源代码
+wget https://nginx.org/download/nginx-1.24.0.tar.gz     #下载
+tar -xzvf nginx-1.24.0.tar.gz       #解压
+cd nginx-1.24.0
+```
 
-2. 准备编译环境
+#### 2. 准备编译环境
 
-    ```sh
-    #安装编译工具和依赖，比如 gcc（GNU 编译器集合）和 make。
-     yum install pcre-devel zlib-devel # 安装 nginx 依赖包
-    ```
+```sh
+#安装编译工具和依赖，比如 gcc（GNU 编译器集合）和 make。
+yum install pcre-devel zlib-devel # 安装 nginx 依赖包
+```
 
-3. 安装（3步曲）
+#### 3. 安装（3步曲）
 
-    ```sh
-    #配置构建环境
-    ./configure --prefix=/usr/local/nginx  #--prefix指定了Nginx的安装目录，其他的配置项按需添加
+```sh
+#配置构建环境
+./configure --prefix=/usr/local/nginx  #--prefix指定了Nginx的安装目录，其他的配置项按需添加
 
-    make    #编译
+make         #编译
+make install  #安装
+```
 
-     make install    #安装
-    ```
+#### 4. 验证
 
-4. 验证
+```sh
+#启停验证
+/usr/local/nginx/sbin/nginx -version
+/usr/local/nginx/sbin/nginx
+/usr/local/nginx/sbin/nginx -s stop
+```
 
-    ```sh
-    #启停验证
-    /usr/local/nginx/sbin/nginx -version
-     /usr/local/nginx/sbin/nginx
-     /usr/local/nginx/sbin/nginx -s stop
-    ```
+#### 5. 软链接（可选）
 
-5. 软链接（可选）
+```sh
+#查看 PATH 环境
+echo $PATH
 
-    ```sh
-    #查看 PATH 环境
-    echo $PATH
+#创建软链接
+ls -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 
-    #创建软链接
-     ls -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+#测试软链接
+nginx -version
+nginx
+nginx -s stop
+```
 
-    #测试软链接
-    nginx -version
-     nginx
-     nginx -s stop
-    ```
+#### 6. 卸载
 
-6. 卸载
+```sh
+#1. 删除软链接
+rm -f /usr/sbin/nginx
 
-    ```sh
-    #1. 删除软链接
-     rm -f /usr/sbin/nginx
+#2. 删除安装目录
+rm -rf /usr/local/nginx
 
-    #2. 删除安装目录
-     rm -rf /usr/local/nginx
-
-    #2. 执行make自带的卸载程序卸载（部分软件支持）
-    # make uninstall
-    ```
+#2. 执行make自带的卸载程序卸载（部分软件支持）
+# make uninstall
+```
 
 ps：因为没有使用包管理器安装，所以需要手动删除安装的文件。如果你在配置时指定了 --prefix，只需删除该目录即可。
 
