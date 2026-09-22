@@ -52,21 +52,21 @@ cat 文件名 | sed [选项] '匹配条件和操作指令'
     --version   #output version information and exit
 ```
 
-| 选项 | 例子 |
-| ---- | ---- |
-| `-n, --quiet, --silent` </br> 禁止自动打印模式（常配合'p'使用，仅显示处理后的结果） | `sed -n '/hello/p'  filename` </br> 使用 /hello/ 匹配含有 "hello" 的行，p 打印匹配的行 |
-| `--debug` </br> 以注解的方式显示 sed 的执行过程，帮助调试脚本 | `sed --debug 's/foo/bar/'  filename` </br> 当你使用 sed 修改内容时，它会显示调试信息，以便你了解脚本是如何执行的 |
-| `-e script, --expression=script` </br> 在命令行中直接指定 sed 脚本（允许多个 sed 表达式） | `sed -e 's/foo/bar/' -e 's/hello/world/'  filename` </br> 将文件中的 foo 替换为 bar，然后将 hello 替换为 world |
-| `-f script-file, --file=script-file` </br> 从指定的脚本文件中读取 sed 命令 | `sed -f script.sed  filename` </br> script.sed 是包含多个 sed 命令的脚本文件，sed 会按顺序执行这些命令 |
-| `--follow-symlinks` </br> 当指定 -i 时，sed 会跟随符号链接（symlink）指向的实际文件进行编辑 | `sed -i --follow-symlinks 's/foo/bar/' symlink.txt` </br> 如果 symlink.txt 是一个符号链接文件，sed 会编辑它指向的实际文件 |
-| `-i[SUFFIX], --in-place[=SUFFIX]` </br> 直接编辑文件（如果提供 SUFFIX，则进行备份） | `sed -i.bak 's/foo/bar/'  filename` </br> 直接在  filename 中将 foo 替换为 bar，并创建一个备份文件  filename.bak |
-| `-l N, --line-length=N` </br> 当使用 l 命令（列出行内容）时，指定输出的行宽（N 表示字符数） | `echo 'hello world' \| sed -l 5 'l'` </br> 使用 l 命令显示 "hello world"，但每行最多显示 5 个字符 |
-| `--posix` </br> 禁用 GNU 扩展，使 sed 遵循 POSIX 标准语法 | `sed --posix 's/foo/bar/'  filename` </br> 这将禁用 sed 的一些非标准特性，确保脚本在 POSIX 环境下工作 |
-| `-E, -r, --regexp-extended` </br> 使用扩展的正则表达式（ERE），这与基本正则表达式（BRE）相比，简化了一些语法（例如不用转义括号和 +） | `echo "abc123" \| sed -E 's/[a-z]+([0-9]+)/\1/'` </br> 使用扩展正则表达式，匹配并提取字母后面的数字 |
-| `-s, --separate` </br> 将多个输入文件视为独立的流，而不是作为一个连续的流处理 | `sed -s 's/foo/bar/' file1.txt file2.txt` </br> sed 会分别处理 file1.txt 和 file2.txt，而不是将它们作为一个整体处理 |
-| `--sandbox` </br> 以沙盒模式运行，禁止使用 e, r, w 命令，防止 sed 修改文件或执行外部命令 | `sed --sandbox 's/foo/bar/'  filename` </br> 启用沙盒模式，防止 sed 脚本执行危险的操作 |
-| `-u, --unbuffered` </br> 减少从输入文件读取数据时的缓冲区大小，并更频繁地刷新输出 | `sed -u 's/foo/bar/'  filename` </br> 立即将处理结果输出到标准输出，而不是等到处理大量数据后再输出 |
-| `-z, --null-data` </br> 将输入中的行分隔符从换行符 \n 改为 NUL 字符 \0，这在处理二进制数据或以 NUL 作为分隔符的文本时很有用 | `sed -z 's/foo/bar/'  filename` </br> 使用 NUL 字符作为行分隔符处理文本 |
+| 选项                                                                                      | 例子                                                                                                 |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `-n, --quiet, --silent` </br> 禁止自动打印模式（常配合'p'使用，仅显示处理后的结果）                              | `sed -n '/hello/p'  filename` </br> 使用 /hello/ 匹配含有 "hello" 的行，p 打印匹配的行                            |
+| `--debug` </br> 以注解的方式显示 sed 的执行过程，帮助调试脚本                                               | `sed --debug 's/foo/bar/'  filename` </br> 当你使用 sed 修改内容时，它会显示调试信息，以便你了解脚本是如何执行的                   |
+| `-e script, --expression=script` </br> 在命令行中直接指定 sed 脚本（允许多个 sed 表达式）                   | `sed -e 's/foo/bar/' -e 's/hello/world/'  filename` </br> 将文件中的 foo 替换为 bar，然后将 hello 替换为 world    |
+| `-f script-file, --file=script-file` </br> 从指定的脚本文件中读取 sed 命令                           | `sed -f script.sed  filename` </br> script.sed 是包含多个 sed 命令的脚本文件，sed 会按顺序执行这些命令                    |
+| `--follow-symlinks` </br> 当指定 -i 时，sed 会跟随符号链接（symlink）指向的实际文件进行编辑                      | `sed -i --follow-symlinks 's/foo/bar/' symlink.txt` </br> 如果 symlink.txt 是一个符号链接文件，sed 会编辑它指向的实际文件 |
+| `-i[SUFFIX], --in-place[=SUFFIX]` </br> 直接编辑文件（如果提供 SUFFIX，则进行备份）                       | `sed -i.bak 's/foo/bar/'  filename` </br> 直接在  filename 中将 foo 替换为 bar，并创建一个备份文件  filename.bak     |
+| `-l N, --line-length=N` </br> 当使用 l 命令（列出行内容）时，指定输出的行宽（N 表示字符数）                         | `echo 'hello world' \| sed -l 5 'l'` </br> 使用 l 命令显示 "hello world"，但每行最多显示 5 个字符                   |
+| `--posix` </br> 禁用 GNU 扩展，使 sed 遵循 POSIX 标准语法                                           | `sed --posix 's/foo/bar/'  filename` </br> 这将禁用 sed 的一些非标准特性，确保脚本在 POSIX 环境下工作                     |
+| `-E, -r, --regexp-extended` </br> 使用扩展的正则表达式（ERE），这与基本正则表达式（BRE）相比，简化了一些语法（例如不用转义括号和 +） | `echo "abc123" \| sed -E 's/[a-z]+([0-9]+)/\1/'` </br> 使用扩展正则表达式，匹配并提取字母后面的数字                      |
+| `-s, --separate` </br> 将多个输入文件视为独立的流，而不是作为一个连续的流处理                                      | `sed -s 's/foo/bar/' file1.txt file2.txt` </br> sed 会分别处理 file1.txt 和 file2.txt，而不是将它们作为一个整体处理     |
+| `--sandbox` </br> 以沙盒模式运行，禁止使用 e, r, w 命令，防止 sed 修改文件或执行外部命令                            | `sed --sandbox 's/foo/bar/'  filename` </br> 启用沙盒模式，防止 sed 脚本执行危险的操作                               |
+| `-u, --unbuffered` </br> 减少从输入文件读取数据时的缓冲区大小，并更频繁地刷新输出                                   | `sed -u 's/foo/bar/'  filename` </br> 立即将处理结果输出到标准输出，而不是等到处理大量数据后再输出                               |
+| `-z, --null-data` </br> 将输入中的行分隔符从换行符 \n 改为 NUL 字符 \0，这在处理二进制数据或以 NUL 作为分隔符的文本时很有用      | `sed -z 's/foo/bar/'  filename` </br> 使用 NUL 字符作为行分隔符处理文本                                          |
 
 ### 1.3 匹配条件
 
